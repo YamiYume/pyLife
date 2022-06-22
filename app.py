@@ -8,7 +8,7 @@ my_configuration = Configuration()
 my_configuration.inputs = ['input_distance_left', 'input_distance_right']
 my_configuration.outputs = ['vertical_movement', 'horizontal_movement']
 my_configuration.middle = 2
-my_configuration.genome_size = 5
+my_configuration.genome_size = 8
 my_configuration.mutation = 0.5
 my_configuration.enviroment_size = (100, 100)
 my_configuration.enviroment_lifespan = 100
@@ -37,7 +37,7 @@ def update(dt):
                                          batch=my_batch)
         alive.append(new_rectangle)
 
-pyglet.clock.schedule_interval(update, 1/60.0)
+pyglet.clock.schedule_interval(update, 1/30)
 
 @window.event
 def on_draw():

@@ -24,10 +24,12 @@ class Enviroment:
         self.span_space.append(position)
         return True
 
-    def check_actual(self, position: Tuple[int, int]) -> bool:
+    def check_actual(self, position: Tuple[int, int],
+                     last_position: Tuple[int, int]) -> bool:
         if position in self.actual_space or position in self.proposal_space \
         or position[0] >= self.configuration.enviroment_size[0] or position[0] < 0\
         or position[1] >= self.configuration.enviroment_size[1] or position[1] < 0:
+            self.proposal_space.append(last_position)
             return False
         self.proposal_space.append(position)
         return True

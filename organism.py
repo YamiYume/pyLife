@@ -33,12 +33,12 @@ class Organism:
         if random() < abs(value):
             new_position = (self.position[0],
                             self.position[1] + int(value / abs(value)))
-            if enviroment.check_actual(new_position):
+            if enviroment.check_actual(new_position, self.position):
                 self.position = new_position
 
     def horizontal_movement(self, enviroment, value: float):
         if random() < abs(value):
             new_position = (self.position[0] + int(value / abs(value)),
                             self.position[1])
-            if enviroment.check_actual(new_position):
+            if enviroment.check_actual(new_position, self.position):
                 self.position = new_position
